@@ -1,6 +1,10 @@
 # Teste para Carta
 
-Pegar os títulos na [api de Star Wars](https://https://swapi.co/) e mostrar num
+Teste feito e [publicado aqui (clique)](https://bsides.github.io/carta-test)
+
+# Descrição do teste
+
+Pegar os títulos na [api de Star Wars](https://swapi.co/) e mostrar num
 selectbox. Ao selecionar um título, ele é adicionado numa lista abaixo e o mesmo
 título é removido do selectbox. A lista contém o nome do filme e um botão de
 remover. Ao clicar nesse botão de remover, o título sai dessa lista e volta
