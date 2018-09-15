@@ -29,36 +29,33 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.titles.length < 1) return <div />
     const { titles } = this.state
+    if (titles.length < 1) return <div />
+    const options = titles.map(
+      item => !item.isSelected && <option key={item.title}>{item.title}</option>
+    )
+    const items = titles.map(
+      item =>
+        item.isSelected && (
+          <li key={item.title}>
+            <span>{item.title} </span>
+            <button
+              type="button"
+              onClick={this.handleSelected}
+              value={item.title}
+            >
+              x
+            </button>
+          </li>
+        )
+    )
     return (
       <div>
         <select onChange={this.handleSelected}>
           <option key="0">Selecione</option>
-          {titles.map(
-            item =>
-              !item.isSelected && <option key={item.title}>{item.title}</option>
-          )}
+          {options}
         </select>
-        <div>
-          <ul>
-            {titles.map(
-              item =>
-                item.isSelected && (
-                  <li key={item.title}>
-                    {item.title}{' '}
-                    <button
-                      type="button"
-                      onClick={this.handleSelected}
-                      value={item.title}
-                    >
-                      x
-                    </button>
-                  </li>
-                )
-            )}
-          </ul>
-        </div>
+        <ul>{items}</ul>
       </div>
     )
   }
