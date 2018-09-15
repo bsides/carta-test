@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.data.length < 1) return <div />
+    if (this.state.titles.length < 1) return <div />
     const { titles } = this.state
     return (
       <div>
